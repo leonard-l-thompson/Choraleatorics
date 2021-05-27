@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Choraleatorics</title>
+<style>
+html,body {height:50%;}
+span{font-size:100%;font-family:Arial, sans-serif;} 
+button{margin:5px;padding:4px;border:outset;font-family:Arial,sans-serif;font-size:18px;}
+a{border:thin solid black;background-color:black;font-family:Trebuchet MS,sans-serif;width:543px;margin:5px;border-radius:12px;padding:5px;line-height:150%;font-size:400%;}
+div{font-family:Arial, sans-serif;}
+</style>
+<script>
+var colFunc = function(n=150){
+var v1 = 100+Math.floor(Math.random()*n);
+var v2 = 100+Math.floor(Math.random()*n);
+var v3 = 100+Math.floor(Math.random()*n);
+var col = "rgb\(" + v1 + "," + v2 + "," + v3   + "\)";
+return col} 
+</script>
+</head>
+<body>
+<span id='s00'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;margin-left:8px;">C</span>
+<span id='s01'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;">h</span>
+<span id='s02'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;">o</span>
+<span id='s03'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;">r</span>
+<span id='s04'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;">a</span>
+<span id='s05'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;">l</span>
+<span id='s06'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;">e</span>
+<span id='s07'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;">a</span>
+<span id='s08'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;">t</span>
+<span id='s09'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;">o</span>
+<span id='s10'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;">r</span>
+<span id='s11'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;">i</span>
+<span id='s12'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;">c</span>
+<span id='s13'style="all:unset;font-size:30px;
+font-family:Arial, sans-serif;">s</span>
+<span style= "margin:7px;font-size:85%;">harmony practice tool</span>	
+<div>
+<a id='c00'> </a> &nbsp 
+<a id='c01'> </a> &nbsp
+<a id='c02'> </a> &nbsp
+<a id='c03'> </a> &nbsp 
+<br>
+<a id='c04'> </a> &nbsp
+<a id='c05'> </a> &nbsp
+<a id='c06'> </a> &nbsp
+<a id='c07'> </a> &nbsp 
+<br>
+<a id='c08'> </a> &nbsp
+<a id='c09'> </a> &nbsp
+<a id='c10'> </a> &nbsp
+<a id='c11'> </a> &nbsp
+</div>
+<button id = 'b00'onclick=rowGen(0);>ma, mi</button>
+<button id = 'b01'onclick=rowGen(1);>ma, mi, °, +</button>
+<button id = 'b02'onclick=rowGen(2);>ma, mi, °</button>
+<button id = 'b03'onclick=rowGen(3);>agnostic</button>
+<button id = 'b04'onclick=rowGen(4);>mi</button>
+<button id = 'b05'onclick=rowGen(5);>4 note chords</button>
+<span style = "font-size:100%;"> &larr; chord pools </span>
+<div id = 'info' STYLE="height:200px;width:90%;overflow-y: scroll;padding:5px;font-size:16px;border:thin dotted black;margin:8px;line-height:125%;">
+ <ul>
+  <li><b>What?: </b>A randomly generated chord sequence whose nominal roots manifest a twelve tone row. These chords are any and all inversions of <b><i>triads</i></b> unless noted, and most of the exercises are conceived of with <b><i>spread voicings</i></b> in mind, whereby the distance between the outer two voices exceeds an octave. </li>
+  <li><b>Goal: </b> Play games or improvise short pieces through a sequence, keeping good voice leading and sensible counterpoint in mind.</li>
+  <li> <b>Games</b>  <ol>
+  <li>Start on any inversion of a spread voicing of the first chord.  Move in either direction to the closest notes of the next chord, in rubato fashion, staggering chromatic travel of each voice as needed. Common tones between adjacent chords will not move. Make a few passes, increasing the tempo in aim of a smooth musical phrase.</li>
+  <li> Choose one of the three voices and assign to it a melodic contour rule. It could be as simple as a two notes (appoggiaturra followed by chord tone, for example) or something more involved, like  [chord tone, upper neighbor, chord tone, lower neighbor, chord tone]. Stagger chromatic travel in the remaining two voices from one chord to the next, realizing smooth voice leading and avoiding parallel fifths. </li>
+  <li>Assign a melodic contour rule, like above, to a single chord tone  (always the third of the chord, for example). The melodic fragment will therefore will be traded among different voices depending on the chord inversion.</li>
+  <li>Combine a melodic contour rule in one voice with different types of figuration in the other two voices. Example:sustained single tone in the bottom voice, repeated quarter notes in the middle voice, and an eighth note melodic contour rule in the top voice.</li>
+  <li>Assign an arpeggiated triplet octave figuration (it ascends then descends) to the top voice. Its downbeat will be the top note of the chord. Let the middle voice be a singing melody.</li>
+  <li>Have the root and third of the chord temporarily trade voices and then return, before moving on to the next chord.</li>
+  <li>A two voice exercise where the top voice is sustained as a melody note, while the voice below it is an eighth note figuration accompaniment that alternates between the remaining two chord tones. This can be realized in two hands with spread voicings or in a single hand with more compact voicings.</li>
+  <li>A Chopin prelude like texture whereby the lower two voices sound together in rhythmic ostinato, with staggered travel, while the top voice sings a sustained melody.</li>
+  <li>Outer voices are sustained tones while the middle voice plays a a motivic figuration using any chord tones and approach notes</li>
+  <li>Add a fourth free voice guided by your ear. One option is a new sustained bottom voice lower than the other three, which might still allow any three voice game to be played with the remaining voices. Another option is a freely improvised melodic top voice allowing for either sustained chords below, or an Alberti rendering of the bottom three voices (the latter effectively a two voice exercise). </li>
+  <li>Top and middle voices are appoggiaturrae of contrary motion and different speeds</li>
+  <li>As a basic harmony "flash card" practice, run spread voicing inversions of each chord up and down the keyboard. Precede each chord with the lower chromatic neighbor of the top voice.</li>
+  <li>Top voice is an ostinato repeating the chord tone, while the middle voice is is free melody that still acentuates its chord tone.</li>
+  <li>A single voice exercise of spread voicing arpeggiation modeled after Bach's G major cello suite.</li>
+  <li>A two voice exercise where the top voice is an octave triplet arpeggiation (up then down) of the chord and the bottom voice is a soaring melody that centers around chord tones.</li>
+  <li></li>
+  <li></li>
+  <li>Play an agnostic version of the exercise: Pick any quality from one chord to the next, or try a single quality for an entire sequence. Or, play any chord as long as the root name appears somewhere in that chord. Do 4 voice versions of any of the aformentioned, with the added free voice in the bass guided by your ear.</li>
+</li></ol> 
+ 
+
+<b>Ideas and Tips</b><ul>
+<li>When encountering two consecutive chords of the same quality(particularly with proximal roots), become comfortable moving in the direction opposite to what the nominal roots might suggest, thereby rendering separate inversions.</li>
+<li>Shape sequences into smaller musical phrases (the three rows as they appear on the screen can work well), allowing pauses or temporary suspension of tempo between each. </li>
+<li>The most challenging part of a game will be determining the passing material between chords. The staggered movement of voices required to produce smooth counterpoint will render nearly double the harmonic content explicit in the chord sequence.</li>
+</ul></ul>
+
+<!--
+top voice: 8th note appog from above
+middle and bottom voice 1/4 note appog from below, except root posit (par 5ths)
+
+like above but bot and middle converge
+
+if an appoggiatura rule forces you to repeat a phrase, feel free to switch the direction of the appog
+
+two appogg, converging or diverging, different speeds. top and mid
+alternating converge diverge (diff speeds) sounds good
+moving spread voiced arrpegios with approach notes in top voice.
+
+top voice does repeated below neighbor to tone and same next chord tone up, alternating
+
+two voice soaring lower voice. upper voice triplet figuration
+
+
+
+
+ 7. Create two different melodic rules for two different voices.<br>
+ 8. Strike the middle voice of the chord on the downbeat. The outer two voices are two appoggiaturrae, either converging or diverging in contrary motion to produce a delayed resolution to their chord tones.<br>
+ 9. <br>
+ 10. Play a four voice version, still using 3 note chord pools,  where the top voice is a free melody of your choice, and the bottom three voices are still moving chords with inversions and smooth voice leading.
+ <br>
+ 10. Let the root and third temporarily switch voices and return, in leaps or scalarly. This intrinsically produces contrary motion. <br>
+ 11. Bottom voice sustains, middle voice plays repeated off-beats. Top voice plays a melodic motif, or plays freely in between downbeat chord tones.<br>
+ 12. Add a fourth voice, below the other 3, guided by your ear, free to move as little or as much as you like. It could even be a strategically chosen single pedal tone.<br> 
+ 13.Play a four voice version where the free note may appear in any voice.<br>
+ 14. Play a two voice version, where the top voice is a free melody and the bottom voice is some type of bass figuration (Alberti is a nice place to start)  based on the chord.<br> 
+ 15. A two voice version with right hand only (or left!) where the top voice is a sustained chord tone melody and the lower voice is a figuration produced by some interplay between the remaining two chord tones. Or do this same two voiced version split between the hands.<br>
+16. A three voice version where the outer voices are melodic sustained notes and the inner voice is allowed to travel in arpeggiated figuration, outlining the chord harmony with chord and neighbor tones. <br>
+17.An agnostic version where the three rows on screen represent three different 4 note chords. Cycle through them at a comfortable pace, using good voice leading and wide spread voicings, exploring different inversions, arpeggiating or figurating, or improvising.<br>
+18. In agnostic mode, treat the entire sequence as a tone row that can be played over each of the three phrases of a 12 bar blues.<br>
+19. Three voice: long sustained notes in top voice, contour rule in the middle voice. Triplet (chord tone + lower neighbor + chord tone) works well.<br>
+Depending on how many chord qualities you're using, there are upwards of 1.2 billion distinct species of these sequences, so best not procrastinate.
+Have fun!
+
+  -->
+
+
+
+
+</div>
+</body>
+<footer><i> v1.03 &copy; 2021 lt72music Leonard Thompson</i></footer>
+<script>
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+var flatPitches = [ 'B♭','D♭','E♭','G♭','A♭','A','B','C','D','E','F','G'];
+var sharpPitches = [ 'A♯','C♯','D♯','F♯','G♯','A','B','C','D','E','F','G'];
+var pitchGen = function(){var ran = Math.random();
+var res = (ran > .5) ? flatPitches : sharpPitches;
+shuffle(res);
+return res
+};
+var maSym = 'ᵐᵃ'
+var miSym = 'ᵐᶦ'
+var dimSym = '°'
+var augSym = '+'
+var ma7Sym = 'ᵐᵃ⁷'
+var ma7sharp5Sym = 'ᵐᵃ⁷⁺⁵'
+var nullSym = ''
+var mi7Sym = 'ᵐᶦ⁷'
+var mima7Sym = 'ᵐᶦ ᵐᵃ⁷'
+
+var chordPoolTypes = [
+[maSym,miSym,maSym,miSym],
+[maSym,miSym,dimSym,augSym],
+[maSym,miSym,dimSym,miSym],
+[nullSym,nullSym,nullSym,nullSym],
+[miSym,miSym,miSym,miSym],
+[ma7sharp5Sym,mi7Sym,mima7Sym,ma7Sym]
+
+]
+var rowGen = function(n){
+var pitches = pitchGen()
+var qualTwelve = function(){var a = [];
+for (i = 0; i < 3; i++){var s = chordPoolTypes[n];
+shuffle(s);
+a = a.concat(s)}
+return a;
+}()
+var ar = []
+for (i = 0; i < 12; i++){
+ar[i] = pitches[i]+qualTwelve[i]}
+var v = ar;
+document.getElementById('c00').innerHTML = v[0]; 
+document.getElementById('c00').style.color = colFunc(); 
+document.getElementById('c01').innerHTML = v[1]; 
+document.getElementById('c01').style.color = colFunc(); 
+document.getElementById('c02').innerHTML = v[2]; 
+document.getElementById('c02').style.color = colFunc(); 
+document.getElementById('c03').innerHTML = v[3]; 
+document.getElementById('c03').style.color = colFunc(); 
+document.getElementById('c04').innerHTML = v[4]; 
+document.getElementById('c04').style.color = colFunc(); 
+document.getElementById('c05').innerHTML = v[5]; 
+document.getElementById('c05').style.color = colFunc(); 
+document.getElementById('c06').innerHTML = v[6]; 
+document.getElementById('c06').style.color = colFunc(); 
+document.getElementById('c07').innerHTML = v[7]; 
+document.getElementById('c07').style.color = colFunc(); 
+document.getElementById('c08').innerHTML = v[8]; 
+document.getElementById('c08').style.color = colFunc(); 
+document.getElementById('c09').innerHTML = v[9]; 
+document.getElementById('c09').style.color = colFunc(); 
+document.getElementById('c10').innerHTML = v[10]; 
+document.getElementById('c10').style.color = colFunc(); 
+document.getElementById('c11').innerHTML = v[11]; 
+document.getElementById('c11').style.color = colFunc(); 
+
+document.getElementById('s00').style.color = colFunc(75);
+document.getElementById('s01').style.color = colFunc(75);
+document.getElementById('s02').style.color = colFunc(75);
+document.getElementById('s03').style.color = colFunc(75);
+document.getElementById('s04').style.color = colFunc(75);
+document.getElementById('s05').style.color = colFunc(75);
+document.getElementById('s06').style.color = colFunc(75);
+
+}; 
+rowGen(1);
+</script>
+</html>
