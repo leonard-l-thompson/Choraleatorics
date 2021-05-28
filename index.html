@@ -11,7 +11,7 @@ div{font-family:Arial, sans-serif;}
 </style>
 <script>
 var colFunc = function(n=156){
-var r = 150+Math.floor(Math.random()*n);
+var r = 100+Math.floor(Math.random()*n);
 var g = 100+Math.floor(Math.random()*n);
 var b = 100+Math.floor(Math.random()*n);
 var col = "rgb\(" + r + "," + g + "," + b   + "\)";
@@ -192,6 +192,7 @@ var ar = []
 for (i = 0; i < 12; i++){
 ar[i] = pitches[i]+qualTwelve[i]}
 var v = ar;
+var tC = 125;
 document.getElementById('c00').innerHTML = v[0]; 
 document.getElementById('c00').style.color = colFunc(); 
 document.getElementById('c01').innerHTML = v[1]; 
@@ -217,13 +218,13 @@ document.getElementById('c10').style.color = colFunc();
 document.getElementById('c11').innerHTML = v[11]; 
 document.getElementById('c11').style.color = colFunc(); 
 
-document.getElementById('s00').style.color = colFunc(75);
-document.getElementById('s01').style.color = colFunc(75);
-document.getElementById('s02').style.color = colFunc(75);
-document.getElementById('s03').style.color = colFunc(75);
-document.getElementById('s04').style.color = colFunc(75);
-document.getElementById('s05').style.color = colFunc(75);
-document.getElementById('s06').style.color = colFunc(75);
+document.getElementById('s00').style.color = colFunc(tC);
+document.getElementById('s01').style.color = colFunc(tC);
+document.getElementById('s02').style.color = colFunc(tC);
+document.getElementById('s03').style.color = colFunc(tC);
+document.getElementById('s04').style.color = colFunc(tC);
+document.getElementById('s05').style.color = colFunc(tC);
+document.getElementById('s06').style.color = colFunc(tC);
 
 }; 
 rowGen(1);
