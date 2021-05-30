@@ -179,19 +179,20 @@ var mi7Sym = 'ᵐᶦ⁷'
 var mima7Sym = 'ᵐᶦ ᵐᵃ⁷'
 
 var chordPoolTypes = [
-[maSym,miSym,maSym,miSym],
-[maSym,miSym,maSym,miSym,maSym,miSym,maSym,miSym,maSym,miSym,dimSym,augSym],
-[maSym,miSym,dimSym,miSym],
+[maSym,miSym],
+[maSym,miSym,dimSym,augSym],
+[maSym,miSym,dimSym],
 [nullSym,nullSym,nullSym,nullSym],
 [miSym,miSym,miSym,miSym],
 [ma7sharp5Sym,mi7Sym,mima7Sym,ma7Sym]]
 var rowGen = function(n){
 var pitches = pitchGen()
 var qualTwelve	 = function(){var a = [];
-for (i = 0; i < 7; i++){var s = chordPoolTypes[n];
+var s = chordPoolTypes[n];
+for (i = 0; i < Math.ceil(12 / s.length); i++){
 var x = s;
-shuffle(x);
-a = a.concat(x)}
+shuffle(s);
+a = a.concat(s)}
 return a;
 }()
 var qualTwelvebad = function(){var a = []; var s = chordPoolTypes[n]; if (12 % s.length   == 0)
