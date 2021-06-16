@@ -56,7 +56,7 @@ font-family:Tahoma, sans-serif;">i</span>
 font-family:Tahoma, sans-serif;">c</span>
 <span id='s13'style="all:unset;font-size:25px;color:black;
 font-family:Tahoma, sans-serif;">s</span>
-<span style= "margin:3px;font-size:85%;">a practice tool</span>	<span style = "font-size:50%;">for navigating dysfunctional harmony</span>
+<span style= "margin:3px;font-size:85%;">a practice tool</span>	<span style = "font-size:60%;">for navigating dysfunctional harmony</span>
 <div id = "outerD" style="border:thin solid grey;margin:3px;background-color:black;width:max-content;border-radius:12px;padding:5px;">
 <a id='c00'> </a> &nbsp 
 <a id='c01'> </a> &nbsp
@@ -73,19 +73,20 @@ font-family:Tahoma, sans-serif;">s</span>
 <a id='c10'> </a> &nbsp
 <a id='c11'> </a> &nbsp
 </div>
-<button id = 'b01'onclick=rowGen(1);>ma, mi, °, +</button>
+<button id = 'b01'onclick=rowGen(1);>default</button>
 <button id = 'b02'onclick=rowGen(2);>ma, mi, °</button>
 <button id = 'b00'onclick=rowGen(0);>ma, mi</button>
 <button id = 'b04'onclick=rowGen(4);>mi</button>
 <button id = 'b05'onclick=rowGen(5);>4 note chords</button>
 <button id = 'b03'onclick=rowGen(3);>agnostic</button>
+<button id = 'b06'onclick=rowGen(6);>ma, mi, °, + (even distribution)</button>
 <span style = "font-size:100%;"> &larr; chord pool buttons </span>
 <div id = 'info' STYLE="height:200px;width:90%;overflow-y: scroll;padding:5px;font-size:16px;border:thin dotted black;margin:8px;line-height:125%;">
  <ul>
-  <li><b>What?: </b>A randomly generated chord sequence whose root names make a twelve tone row. These chords are any and all inversions of <b><i>triads</i></b> unless noted, and most of the exercises are designed with <b><i>spread voicings</i></b> in mind, where the distance between the outer two voices exceeds an octave. Chord pool buttons determine the allowable chord qualities in a sequence. </li>
+  <li><b>What?: </b>A randomly generated chord sequence whose root names make a twelve tone row. These chords are any and all inversions of <b><i>triads</i></b> unless noted, and most of the exercises are designed with <b><i>spread voicings</i></b> in mind, where the distance between the outer two voices exceeds an octave. A chord pool button will give the set of possible chord qualities in a sequence. The default is mostly major and minor with one diminished and one augmented thrown in. </li>
   <li><b>Goal: </b> Play games or improvise short pieces through a sequence, keeping good voice leading and sensible counterpoint in mind.</li>
   <li> <b>Games</b>  <ol>
-  <li>Start on any inversion of a spread voicing of the first chord.  Move in either direction to the closest notes of the next chord, as rubato as you wish, staggering chromatic travel of each voice as needed. Common tones between adjacent chords will not move. Make a few passes, increasing the pace and striving for a smooth musical phrase.<a class = "reg"; style="font-style:italic;" href = "https://www.youtube.com/watch?v=x19-ZEoVm-c">video</a></li>
+  <li>Start on any inversion of a spread voicing of the first chord.  Move in either direction to the closest notes of the next chord, as rubato as you wish, staggering chromatic travel of each voice as needed. Common tones between adjacent chords will not move. Make a few passes, increasing the pace and striving for a smooth musical phrase.<a class = "reg"; style="font-style:italic;" href = "https://www.youtube.com/watch?v=x19-ZEoVm-c"  target="_blank">video</a></li>
   <li> Choose one of the three-voices and assign it a melodic contour rule. It could be as simple as an apoggiatura followed by the chord tone, or something more involved, like  [chord tone, upper neighbor, chord tone, lower neighbor, chord tone]. Stagger chromatic travel in the remaining two voices from one chord to the next, realizing smooth voice leading and avoiding parallel fifths. </li>
   <li>Assign a melodic contour rule, like above, to a single chord tone  (always the third of the chord, for example). The melodic fragment will therefore will be traded among different voices depending on the chord inversion.</li>
   <li>Combine a melodic contour rule in one voice with different types of figuration or melodic contour rules in the other two voices. Example: sustained single tone in the bottom voice, repeated quarter notes in the middle voice, and an eighth note melodic contour rule in the top voice.</li>
@@ -186,7 +187,9 @@ var chordPoolTypes = [
 [maSym,miSym,dimSym],
 [nullSym,nullSym,nullSym,nullSym],
 [miSym,miSym,miSym,miSym],
-[ma7sharp5Sym,mi7Sym,mima7Sym,ma7Sym]]
+[ma7sharp5Sym,mi7Sym,mima7Sym,ma7Sym],
+[maSym,miSym,dimSym,augSym]
+]
 var rowGen = function(n){
 var pitches = pitchGen()
 var qualTwelve	 = function(){var a = [];
