@@ -5,7 +5,7 @@
 <style>
 html,body {height:50%;}
 span{font-size:100%;font-family:Tahoma, sans-serif;} 
-button{margin:5px;padding:4px;border:outset;font-family:Tahoma,sans-serif;font-size:18px}
+button{margin:5px;padding:4px;border:outset;font-family:Tahoma,sans-serif;font-size:85%}
 button:hover {background-image: linear-gradient(grey, white); }
 test{border:thin solid black;background-color:black;font-family:Tahoma MS,sans-serif;width:543px;margin:5px;border-radius:12px;padding:5px;line-height:150%;font-size:400%; box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 8px 20px 0 rgba(0,0,0,0.19); }
 a{font-family:Tahoma MS,sans-serif;width:543px;margin:5px;border-radius:12px;padding:5px;line-height:150%;font-size:400%; text-shadow: 1px 1px 2px black; 
@@ -56,8 +56,8 @@ font-family:Tahoma, sans-serif;">i</span>
 font-family:Tahoma, sans-serif;">c</span>
 <span id='s13'style="all:unset;font-size:25px;color:black;
 font-family:Tahoma, sans-serif;">s</span>
-<span style= "margin:3px;font-size:85%;">a practice tool</span>	<span style = "font-size:60%;">for navigating dysfunctional harmony</span>
-<div id = "outerD" style="border:thin solid grey;margin:3px;background-color:black;width:max-content;border-radius:12px;padding:5px;">
+<span style= "margin:3px;font-size:85%;">a voice-leading and inversions practice tool</span>	
+<div id = "outerD" style="border:thin solid black;margin:8px;background-color:black;width:max-content;border-radius:12px;padding-left:10px;padding-right:10px;">
 <a id='c00'> </a> &nbsp 
 <a id='c01'> </a> &nbsp
 <a id='c02'> </a> &nbsp
@@ -73,22 +73,25 @@ font-family:Tahoma, sans-serif;">s</span>
 <a id='c10'> </a> &nbsp
 <a id='c11'> </a> &nbsp
 </div>
-<button id = 'b01'onclick=rowGen(1);>default</button>
+<span style = "border:thin solid black;margin:5px;padding:12px;border-radius:12px;">
+<button id = 'b01'onclick=rowGen(1);>refresh default</button>
 <button id = 'b02'onclick=rowGen(2);>ma, mi, °</button>
 <button id = 'b00'onclick=rowGen(0);>ma, mi</button>
-<button id = 'b04'onclick=rowGen(4);>mi</button>
-<button id = 'b05'onclick=rowGen(5);>4 note chords</button>
+<button id = 'b05'onclick=rowGen(chordPoolTypes.length-1);>4 note chords</button>
 <button id = 'b03'onclick=rowGen(3);>agnostic</button>
-<button id = 'b06'onclick=rowGen(6);>ma, mi, °, + (even distribution)</button>
-<span style = "font-size:100%;"> &larr; chord pool buttons </span>
-<div id = 'info' STYLE="height:200px;width:90%;overflow-y: scroll;padding:5px;font-size:16px;border:thin dotted black;margin:8px;line-height:125%;">
+<button id = 'b06'onclick=rowGen(5);>ma, mi, °, + (even distribution)</button>
+<button id = 'b04'onclick=rowGen(Math.floor(Math.random()*chordPoolTypes.length));>random</button>
+</span>
+
+
+<span style = "font-size:100%;"></span>
+<div id = 'info' STYLE="border-radius:9px;height:200px;width:90%;overflow-y: scroll;padding:5px;font-size:16px;border:thin dotted black;margin:8px;line-height:125%;">
  <ul>
-  <li><b>What?: </b>A randomly generated chord sequence whose root names make a twelve tone row. These chords are any and all inversions of <b><i>triads</i></b> unless noted, and most of the exercises are designed with <b><i>spread voicings</i></b> in mind, where the distance between the outer two voices exceeds an octave. A chord pool button will give the set of possible chord qualities in a sequence. The default is mostly major and minor with one diminished and one augmented thrown in. </li>
-  <li><b>Goal: </b> Play games or improvise short pieces through a sequence, keeping good voice leading and sensible counterpoint in mind.</li>
-  <li> <b>Games</b>  <ol>
-  <li>Start on any inversion of a spread voicing of the first chord.  Move in either direction to the closest notes of the next chord, as rubato as you wish, staggering chromatic travel of each voice as needed. Common tones between adjacent chords will not move. Make a few passes, increasing the pace and striving for a smooth musical phrase.<a class = "reg"; style="font-style:italic;" href = "https://www.youtube.com/watch?v=x19-ZEoVm-c"  target="_blank">video</a></li>
-  <li> Choose one of the three-voices and assign it a melodic contour rule. It could be as simple as an apoggiatura followed by the chord tone, or something more involved, like  [chord tone, upper neighbor, chord tone, lower neighbor, chord tone]. Stagger chromatic travel in the remaining two voices from one chord to the next, realizing smooth voice leading and avoiding parallel fifths. </li>
-  <li>Assign a melodic contour rule, like above, to a single chord tone  (always the third of the chord, for example). The melodic fragment will therefore will be traded among different voices depending on the chord inversion.</li>
+  <li><b>What is it ?</b><br>A randomly generated chord sequence of triads,  whose root names are a shuffled chromatic scale . Most of the exercises are designed with <span class="ui-tooltip" title="For example: a spread-voiced C major triad in first inversion spelled from bottom up would be E,C,G. One chord tone is skipped between adjacent voices. "><span style="cursor: help;"><b><i> spread voicings </b></i></span></span>in mind, where the distance between the outer two voices exceeds an octave. You can choose the set of allowable chord qualities with one of the buttons just below the sequence. The default is mostly a combination major and minor, with one diminished and one augmented thrown in. </li>
+  <li><b>What is the goal?</b><br>Improvise short pieces or render any exercises through a sequence, employing inversions and smooth voice leading to render a connected and musical three-voice texture.</li>
+  <li> <b>Some Exercises</b>  <ol>
+  <li>Start on any inversion of a spread voicing of the first chord.  Move in either direction to the closest notes of the next chord, staggering chromatic travel of each voice as needed. Common tones between adjacent chords may remain stationary. <a class = "reg"; style="font-style:italic;" href = "https://www.youtube.com/watch?v=x19-ZEoVm-c"  target="_blank">video</a></li>
+  <li> Invent a melodic contour rule, and trade it between voices or assign it to a single voice or chord tone. It could be as simple as an apoggiatura followed by the chord tone, or something more involved, like  [chord tone, upper neighbor, chord tone, lower neighbor, chord tone]. Stagger chromatic travel in the remaining two voices from one chord to the next, realizing smooth voice leading and avoiding parallel fifths. </li>  
   <li>Combine a melodic contour rule in one voice with different types of figuration or melodic contour rules in the other two voices. Example: sustained single tone in the bottom voice, repeated quarter notes in the middle voice, and an eighth note melodic contour rule in the top voice.</li>
   <li>Assign an arpeggiated triplet octave figuration (it ascends then descends) to the top voice. Its downbeat will be the top note of the chord. Let the middle voice be a singing melody.</li>
   <li>Have the root and third of the chord temporarily trade voices and then return, before moving on to the next chord.</li>
@@ -103,9 +106,8 @@ font-family:Tahoma, sans-serif;">s</span>
   <li>A two voice exercise where the top voice is an octave triplet arpeggiation (up, then down) of the chord and the bottom voice is a soaring melody that centers around chord tones.</li>
 
   <li>Play an agnostic version of the exercise: Pick any quality from one chord to the next, or try a single quality for an entire sequence. Or, play any chord as long as the root name appears somewhere in that chord. Play four-voice versions of any of the aformentioned, with the added free voice in the bass guided by your ear.</li>
+  <li>Have fun inventing your own.</li>
 </li></ol> 
- 
-
 <b>Ideas and Tips</b><ul>
 <li>When encountering two consecutive chords of the same quality (particularly with nearby root names), become comfortable moving in the direction opposite to what the root name might suggest, thereby rendering separate inversions.</li>
 <li>Shape sequences into smaller musical phrases (the three rows as they appear on the screen can work well), allowing pauses or temporary suspension of tempo between each. </li>
@@ -123,14 +125,8 @@ if an appoggiatura rule forces you to repeat a phrase, feel free to switch the d
 two appogg, converging or diverging, different speeds. top and mid
 alternating converge diverge (diff speeds) sounds good
 moving spread voiced arrpegios with approach notes in top voice.
-
 top voice does repeated below neighbor to tone and same next chord tone up, alternating
-
 two voice soaring lower voice. upper voice triplet figuration
-
-
-
-
  7. Create two different melodic rules for two different voices.<br>
  8. Strike the middle voice of the chord on the downbeat. The outer two voices are two appoggiaturae, either converging or diverging in contrary motion to produce a delayed resolution to their chord tones.<br>
  9. <br>
@@ -187,8 +183,10 @@ var chordPoolTypes = [
 [maSym,miSym,dimSym],
 [nullSym,nullSym,nullSym,nullSym],
 [miSym,miSym,miSym,miSym],
+[maSym,miSym,dimSym,augSym],
+[maSym],[miSym],[dimSym],[augSym],
 [ma7sharp5Sym,mi7Sym,mima7Sym,ma7Sym],
-[maSym,miSym,dimSym,augSym]
+
 ]
 var rowGen = function(n){
 var pitches = pitchGen()
