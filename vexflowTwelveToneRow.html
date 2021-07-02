@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script type="text/javascript"	 src="https://unpkg.com/vexflow/releases/vexflow-debug.js"> 
+ </script>
+</head>
+<body>
+<div id="passage"></div>
+
+ <script defer> 
+ 
+VF = Vex.Flow;
+var div = document.getElementById("passage");
+ var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+renderer.resize(500, 500); var context = renderer.getContext(); context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
+var stave = new VF.Stave(10, 40, 700);
+stave.addClef("treble");
+stave.setContext(context).draw();
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+function choose(array) {return array[Math.floor(Math.random() * array.length)] ;}
+function ttRow() {
+let notes = [  
+  new VF.StaveNote({clef: "treble", keys: ["c/" + choose(["5"])], duration: "w" }),  
+ new VF.StaveNote({clef: "treble", keys: ["d/" + choose(["5","4"])], duration: "w" }),  
+ new VF.StaveNote({clef: "treble", keys: ["e/" + choose(["5","4"])], duration: "w" }),  
+ new VF.StaveNote({clef: "treble", keys: ["f/" + choose(["5","4"])], duration: "w" }),  
+   new VF.StaveNote({clef: "treble", keys: ["g/" + choose(["4","4"])], duration: "w" }),  
+ new VF.StaveNote({clef: "treble", keys: ["a/" + choose(["4","4"])], duration: "w" }),  
+ new VF.StaveNote({clef: "treble", keys: ["b/" + choose([	"4"])], duration: "w" }),  
+ choose([new VF.StaveNote({clef: "treble", keys: ["c/5"], duration: "w" }).addAccidental(0, new VF.Accidental("#")),new VF.StaveNote({clef: "treble", keys: ["d/5"], duration: "w" }).addAccidental(0, new VF.Accidental("b"))],
+   ),  
+   choose([new VF.StaveNote({clef: "treble", keys: ["d/5"], duration: "w" }).addAccidental(0, new VF.Accidental("#")),new VF.StaveNote({clef: "treble", keys: ["e/5"], duration: "w" }).addAccidental(0, new VF.Accidental("b"))],
+   ),  
+   choose([new VF.StaveNote({clef: "treble", keys: ["f/4"], duration: "w" }).addAccidental(0, new VF.Accidental("#")),new VF.StaveNote({clef: "treble", keys: ["g/4"], duration: "w" }).addAccidental(0, new VF.Accidental("b"))],
+   ), 
+      choose([new VF.StaveNote({clef: "treble", keys: ["g/4"], duration: "w" }).addAccidental(0, new VF.Accidental("#")),new VF.StaveNote({clef: "treble", keys: ["a/4"], duration: "w" }).addAccidental(0, new VF.Accidental("b"))],
+   ), 
+      choose([new VF.StaveNote({clef: "treble", keys: ["a/4"], duration: "w" }).addAccidental(0, new VF.Accidental("#")),new VF.StaveNote({clef: "treble", keys: ["b/4"], duration: "w" }).addAccidental(0, new VF.Accidental("b"))],
+   )
+];
+ 
+ shuffle(notes);
+ return notes;
+ }
+  
+// Create a voice in 4/4 and add the notes from above
+var voice = new VF.Voice({num_beats: 12,  beat_value: 1});
+voice.addTickables(ttRow());
+
+
+
+// Format and justify the notes to 400 pixels.
+var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 480);
+// var formatter2 = new VF.Formatter().joinVoices([voice2]).format([voice2], 480);
+
+// Render voice
+voice.draw(context, stave);
+//voice2.draw(context, stave);
+ 
+ </script>
+</body>
+<script>
+
+</script>
+</html>
